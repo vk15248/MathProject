@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Zadaci";
+}
+
+
+<div class="row">
+    <h1 style="color:dodgerblue; float:left">
+        Zadaci
+        <img style="height:50px"src="~/Content/Images/paper.png"/>
+    </h1>  
+</div>
+
+<div>
+    <h2> Odaberite kategoriju po kojoj želite pregledati zadatke:</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group"  style="font-size:large; padding-top:10px">
+        <div class="radio">
+            @Html.RadioButton("kategorija", "Razred", true,
+          new { id = "IsRazred" }) Razred
+        </div>
+        <div class="radio">
+            @Html.RadioButton("kategorija", "Oblast",
+           new { id = "IsOblast" }) Oblast
+        </div>
+    </div>
+}
+
+<div id="html" class="demo">
+    <ul>
+        <li data-jstree='{ "opened" : true }'>
+            Root node
+            <ul>
+                <li data-jstree='{ "selected" : true }'>Child node 1</li>
+                <li>Child node 2</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+    $('#html').jstree();
+</script>
