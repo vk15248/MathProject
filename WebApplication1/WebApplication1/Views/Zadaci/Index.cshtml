@@ -28,18 +28,18 @@
     </div>
 }
 
-<div id="html" class="demo">
-    <ul>
-        <li data-jstree='{ "opened" : true }'>
-            Root node
-            <ul>
-                <li data-jstree='{ "selected" : true }'>Child node 1</li>
-                <li>Child node 2</li>
-            </ul>
-        </li>
-    </ul>
-</div>
+<h1>AJAX demo</h1>
+<div id="ajax" class="demo"></div>
 
 <script>
-    $('#html').jstree();
+    $('#ajax').jstree({
+        'core': {
+            'data': {
+                'url': '/api/Document/',
+                'data': function (node) {
+                    return { 'id': node.id };
+                }
+            }
+        }
+      });
 </script>
