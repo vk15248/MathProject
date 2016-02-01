@@ -168,3 +168,5 @@ X:\Projekat-test\second idea\MathProject\WebApplication1\WebApplication1\bin\Sys
 X:\Projekat-test\second idea\MathProject\WebApplication1\WebApplication1\bin\System.Net.Http.Formatting.xml
 X:\Projekat-test\second idea\MathProject\WebApplication1\WebApplication1\bin\System.Web.Http.xml
 X:\Projekat-test\second idea\MathProject\WebApplication1\WebApplication1\bin\System.Web.Http.WebHost.xml
+X:\Projekat-test\second idea\MathProject\WebApplication1\WebApplication1\bin\MySql.Data.dll
+X:\Projekat-test\second idea\MathProject\WebApplication1\WebApplication1\bin\MySql.Data.Entity.EF6.dll
