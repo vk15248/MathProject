@@ -222,7 +222,7 @@
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\TreeController.cs" />
+    <Compile Include="Controllers\TreeController1.cs" />
     <Compile Include="Controllers\ZadaciController.cs" />
     <Compile Include="DbModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -249,8 +249,7 @@
     <Compile Include="Models\Dokument.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Oblast.cs" />
-    <Compile Include="Models\Razred.cs" />
+    <Compile Include="Models\TreeNode.cs" />
     <Compile Include="oblast.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>

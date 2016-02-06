@@ -27,9 +27,7 @@
         </div>
     </div>
 }
-
-<h1>AJAX demo</h1>
-<div id="ajax" class="demo"></div>
+<div id="tree" class="demo"></div>
 
 <p>
     When
@@ -65,10 +63,10 @@
 </p>
 
 <script>
-    $('#ajax').jstree({
+    $('#tree').jstree({
         'core': {
             'data': {
-                'url': '/api/Document',
+                'url': '/api/Tree',
                 "dataType" : "json" 
                 }
             }
