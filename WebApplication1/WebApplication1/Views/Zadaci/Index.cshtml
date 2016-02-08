@@ -27,7 +27,9 @@
         </div>
     </div>
 }
-<div id="tree" class="demo"></div>
+<div id="js-tree" class="demo"></div>
+
+<div id="tree"></div>
 
 <p>
     When
@@ -63,12 +65,43 @@
 </p>
 
 <script>
-    $('#tree').jstree({
+  /*  $('#js-tree').jstree({
         'core': {
             'data': {
                 'url': '/api/Tree',
                 "dataType" : "json" 
                 }
             }
-        });
+    });*/
+
+    $.getJSON("../api/Tree")
+      .done(function (json) {
+          console.log("JSON Data: " + json);
+          var items = [];
+          $.each(json, function (key, value) {
+              items.push("<li id='li" + value.id + "'>" + "<a href='#' onclick='getChildren(this.id)' id='" + value.id + "'>" + value.text + "</a></li>");
+          });
+          $("<ul/>", {
+              "class": "my-tree",
+              html: items.join("")
+          }).appendTo("#tree");
+      })
+      .fail(function (jqxhr, textStatus, error) {
+          var err = textStatus + ", " + error;
+          console.log("Request Failed: " + err);
+      });
+
+    function getChildren(id) {
+        $.getJSON("../api/Tree/" + id)
+     .done(function (json) {
+         console.log("JSON Data: " + json);
+         $.each(json, function (key, value) {
+             $("<li style='padding-left:5px'>" + "<a href='#' id='" + value.id + "'>" + value.text + "</a></li>").insertAfter("#li" + id);;
+         });
+     })
+     .fail(function (jqxhr, textStatus, error) {
+         var err = textStatus + ", " + error;
+         console.log("Request Failed: " + err);
+     });
+    }
 </script>
